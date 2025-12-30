@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Users Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="users.html">Users</a>
+  </nav>
+
+  <h1>Users Admin Panel</h1>
+
+  <form id="addUserForm">
+    <input type="text" id="name" placeholder="Enter user name" required>
+    <button type="submit">Add User</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="usersTable">
+      <!-- Users will be loaded here -->
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
