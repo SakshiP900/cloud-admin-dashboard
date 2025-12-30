@@ -26,9 +26,14 @@ A simple admin dashboard hosted on AWS EC2 with Node.js, Express, MySQL, and Ngi
 ## Dependencies
 
 - Node.js
+  curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
+sudo yum install -y nodejs
+
+node -v
+npm -v
+
 - npm packages:
   - express
-  - mysql
   - cors
   - pm2 (for running server)
 - MySQL server
