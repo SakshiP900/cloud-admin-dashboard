@@ -1,7 +1,5 @@
 # Cloud Admin Dashboard
-
-A simple admin dashboard hosted on AWS EC2 with Node.js, Express, MySQL, and Nginx. You can **view, add, and delete users** through a web interface.
-
+A full-stack User Management Web Application hosted on AWS. Users can be added and deleted via a web interface. The backend runs on Node.js, the frontend uses HTML, CSS, and JavaScript, and user data is stored in AWS RDS MySQL. The application is load-balanced with AWS ALB and auto-scaled with AWS ASG.
 ---
 
 ## Features
@@ -10,25 +8,35 @@ A simple admin dashboard hosted on AWS EC2 with Node.js, Express, MySQL, and Ngi
 - Add and delete users from browser
 - User data stored in MySQL
 - Hosted on AWS EC2 with Nginx reverse proxy
+- Hosted on AWS EC2 behind Application Load Balancer (ALB)
+- Auto-scaling enabled via Auto Scaling Group (ASG)
+- Security group allows ports 22 (SSH), 80 (HTTP), 3000 (Node.js API)
 
 ---
 
 ## Technologies
 
-- Node.js & Express
-- MySQL
-- PM2 (process manager)
-- Nginx
-- HTML, CSS, JavaScript
-
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js, Express
+- Database: MySQL on AWS RDS
+- AWS Services: EC2, RDS, ALB, ASG, Security Groups
+- Process Manager: PM2 
 ---
+
+## Security Group Configuration
+
+Make sure your EC2 Security Group allows:
+| Port | Protocol | Purpose                |
+| ---- | -------- | ---------------------- |
+| 22   | TCP      | SSH access             |
+| 80   | TCP      | HTTP traffic (ALB)     |
+| 3000 | TCP      | Node.js API (optional) |
+
+
 
 ## Dependencies
 
 - Node.js
-  curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
-sudo yum install -y nodejs
-
 node -v
 npm -v
 
@@ -44,18 +52,13 @@ Make sure port 80 and 3000 are open in your EC2 Security Group.
 
 1. Clone the repository:
 
-```bash
 git clone <repo-url>
-cd cloud-project
-
+cd cloud-user-dashboard
 
 2. Install backend dependencies:
 
 cd backend/
 npm install
-
-git clone <repo-url>
-cd cloud-project
 
 3. Configure MySQL database:
 Create database and users table:
@@ -67,21 +70,31 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL
 );
 
-
 Update db.js with database credentials.
 
 
 4. Start backend server with PM2:
+   
+cd backend/
 pm2 start server.js --name cloud-backend
 pm2 save
 
+Or for development:
+node server.js
+
 5. Configure Nginx:
+   
 Point Nginx root to the frontend folder
 Restart Nginx:
 sudo systemctl restart nginx
 
-6. Open your public IP in browser:
-http://<your-ec2-public-ip>
+6. Access the Application
+
+Open browser at:
+
+http://<ALB-DNS-Name>/
+
+Use the Users page to add or delete users.
 
 Usage:
 Navigate between Home and Users pages.
