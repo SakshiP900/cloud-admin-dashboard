@@ -100,6 +100,9 @@ http://<ALB-DNS-Name>/
 
 
 Navigate between Home and Users pages
+
 Add new users via form
+
 Delete users using the Delete button
+
 User data is automatically updated in MySQL
