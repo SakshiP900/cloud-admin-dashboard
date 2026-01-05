@@ -27,7 +27,12 @@ AWS Services: EC2, RDS, ALB, ASG, Security Groups
 Process Manager: PM2
 Security Group Configuration
 
-## Security Group Configuration Make sure your EC2 Security Group allows: | Port | Protocol | Purpose | | ---- | -------- | ---------------------- | | 22 | TCP | SSH access | | 80 | TCP | HTTP traffic (ALB) | | 3000 | TCP | Node.js API (optional) |
+## Security Group Configuration Make sure your EC2 Security Group allows:
+| Port | Protocol | Purpose |
+| ---- | -------- | ---------------------- |
+| 22 | TCP | SSH access |
+| 80 | TCP | HTTP traffic (ALB) |
+| 3000 | TCP | Node.js API (optional) |
 
 ## Dependencies
 
