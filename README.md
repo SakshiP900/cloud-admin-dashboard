@@ -87,7 +87,7 @@ node server.js
 5. Configure Nginx (optional)
 
 Point Nginx root to the frontend folder.
-
+ 
 Restart Nginx:
 
 sudo systemctl restart nginx
