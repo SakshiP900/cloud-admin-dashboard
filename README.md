@@ -54,11 +54,13 @@ Ensure database port (default 3306) is accessible
 git clone <repo-url>
 cd cloud-project
 
-2. Install backend dependencies
+
+3. Install backend dependencies
 cd backend/
 npm install
 
-3. Configure MySQL database
+
+4. Configure MySQL database
 
 Create database and users table (example):
 
@@ -73,6 +75,7 @@ CREATE TABLE users (
 
 Update db.js with your database credentials (RDS endpoint, username, password).
 
+
 4. Start backend server with PM2
 cd backend/
 pm2 start server.js --name cloud-backend
@@ -84,6 +87,7 @@ For development, you can also use:
 
 node server.js
 
+
 5. Configure Nginx (optional)
 
 Point Nginx root to the frontend folder.
@@ -92,11 +96,13 @@ Restart Nginx:
 
 sudo systemctl restart nginx
 
+
 6. Access the Application
 
 Open browser at:
 
 http://<ALB-DNS-Name>/
+
 
 
 Navigate between Home and Users pages
