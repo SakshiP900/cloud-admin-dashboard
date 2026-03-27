@@ -1,6 +1,6 @@
 ## Cloud Admin Dashboard
 
-A full-stack User Management Web Application hosted on AWS. Users can be added and deleted via a web interface.
+A User Management Web Application hosted on AWS. Users can be added and deleted via a web interface.
 
 Backend: Node.js + Express
 Frontend: HTML, CSS, JavaScript
