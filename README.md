@@ -101,7 +101,7 @@ sudo systemctl restart nginx
 
 Open browser at:
 
-*http://<ALB-DNS-Name>/*
+http://ALB-DNS-Name/
 
 
 
